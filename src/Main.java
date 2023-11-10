@@ -1,7 +1,10 @@
 import includes.Koneksi;
 import includes.User;
 
+import javax.swing.*;
+import java.awt.*;
 import java.sql.*;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -9,20 +12,44 @@ public class Main {
         User user1 = new User();
 
         Koneksi koneksi = new Koneksi();
+//        Scanner input = new Scanner(System.in);
+        JFrame frame = new JFrame("Login");
+        JLabel labelUsername = new JLabel("Username");
+        JLabel labelPassword = new JLabel("Password");
+        JTextField fieldUsername = new JTextField();
+        JPasswordField fieldPassword = new JPasswordField();
+        JButton buttonLogin = new JButton("Login");
 
-        String name; String password;
-        Scanner input = new Scanner(System.in);
+        JPanel panel = new JPanel();
+        panel.setLayout(new);
+//        labelUsername.setBounds(10, 10, 100, 30);
+//        labelPassword.setBounds(10, 50, 100, 30);
+//        fieldUsername.setBounds(110, 10, 100, 30);
+//        fieldPassword.setBounds(110, 50, 100, 30);
+//        buttonLogin.setBounds(10, 90, 100, 30);
+        panel.add(labelUsername);
+        panel.add(labelPassword);
+        panel.add(fieldUsername);
+        panel.add(fieldPassword);
+        panel.add(buttonLogin);
+        frame.add(panel);
+        frame.setVisible(true);
+        frame.setBounds(500, 100, 400, 400);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
-//        String query = "SELECT * FROM user WHERE name = " + name + " AND password = " + password;
+        buttonLogin.addActionListener(e -> {
+            String name = fieldUsername.getText();
+            String password = new String(fieldPassword.getPassword());
+            String query = "SELECT * FROM user WHERE name = \"" + name + "\" AND password = \"" + password + "\"";
+            koneksi.queryUser(query, user1);
 
-        koneksi.queryUser("SELECT * FROM user WHERE id = 0", user1);
+            if (user1.getName() == null){
+                System.out.println("User tidak ditemukan");
+            } else {
+                System.out.println("User ditemukan");
+            }
+        });
 
-        System.out.println(user1.getName());
-
-//        Login dialog = new Login();
-//        dialog.pack();
-//        dialog.setVisible(true);
-//        System.exit(0);
     }
 }
