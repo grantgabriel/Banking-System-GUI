@@ -32,7 +32,7 @@ public class Koneksi {
 
     }
 
-    public User queryUser(String query, User user){
+    public User SQLQuery(String query, User user){
         try {
             int[] id = {};
             int i = 0;
@@ -49,6 +49,16 @@ public class Koneksi {
             e.printStackTrace();
         }
         return user;
+    }
+
+    public void SQLQuery(String query){
+        try{
+            conn = DriverManager.getConnection(URL, HOST, PASSWORD);
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(query);
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 
     public Connection getConnection(){
