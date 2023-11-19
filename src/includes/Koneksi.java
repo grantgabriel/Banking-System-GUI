@@ -3,7 +3,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class Koneksi {
-    private final String DB_NAME = "java_app";
+    private final String DB_NAME = "java";
     private final String HOST = "root";
     private final String PASSWORD = "";
     private final String DRIVER = "com.mysql.jdbc.Driver";

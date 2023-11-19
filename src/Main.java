@@ -21,12 +21,12 @@ public class Main {
         JButton buttonLogin = new JButton("Login");
 
         JPanel panel = new JPanel();
-        panel.setLayout(new);
-//        labelUsername.setBounds(10, 10, 100, 30);
-//        labelPassword.setBounds(10, 50, 100, 30);
-//        fieldUsername.setBounds(110, 10, 100, 30);
-//        fieldPassword.setBounds(110, 50, 100, 30);
-//        buttonLogin.setBounds(10, 90, 100, 30);
+        panel.setLayout(null);
+        labelUsername.setBounds(10, 10, 100, 30);
+        labelPassword.setBounds(10, 50, 100, 30);
+        fieldUsername.setBounds(110, 10, 100, 30);
+        fieldPassword.setBounds(110, 50, 100, 30);
+        buttonLogin.setBounds(10, 90, 100, 30);
         panel.add(labelUsername);
         panel.add(labelPassword);
         panel.add(fieldUsername);
