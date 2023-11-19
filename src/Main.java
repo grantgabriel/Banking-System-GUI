@@ -13,8 +13,8 @@ public class Main {
     public static void main(String[] args) {
         User user1 = new User();
         Koneksi koneksi = new Koneksi();
-
         SwingUtilities.invokeLater(() -> createAndShowGUI(user1, koneksi));
+
 
     }
 }

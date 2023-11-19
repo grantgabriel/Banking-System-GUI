@@ -50,7 +50,13 @@ public class login_page {
             }
 
             else {
-                System.out.println("User ditemukan");
+                frame.getContentPane().removeAll();
+                // Create and add the welcome page panel
+                dashboard apa_ya = new dashboard(user.getName());
+                frame.add(apa_ya);
+                // Update the frame's UI
+                frame.revalidate();
+                frame.repaint();
             }
         });
 
