@@ -52,7 +52,7 @@ public class login_page {
             else {
                 frame.getContentPane().removeAll();
                 // Create and add the welcome page panel
-                dashboard apa_ya = new dashboard(user.getName());
+                dashboard apa_ya = new dashboard(user);
                 frame.add(apa_ya);
                 // Update the frame's UI
                 frame.revalidate();

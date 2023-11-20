@@ -44,6 +44,7 @@ public class Koneksi {
                 user.setName(rs.getString("name"));
                 user.setEmail(rs.getString("email"));
                 user.setPassword(rs.getString("password"));
+                user.setMoney(rs.getInt("money"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
