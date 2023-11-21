@@ -6,13 +6,15 @@ public class User {
     private String email;
     private String password;
     private int money;
+    private int role;
 
-    public User(int id, String name, String email, String password, int money){
+    public User(int id, String name, String email, String password, int money , int role){
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
         this.money = money;
+        this.role = role;
     }
 
     public User(){
@@ -38,6 +40,10 @@ public class User {
         return money;
     }
 
+    public int getRole(){
+        return role;
+    }
+
     public void setId(int id){
         this.id = id;
     }
@@ -56,5 +62,10 @@ public class User {
     public void setMoney(int money){
         this.money = money;
     }
+    public void setRole(int role){
+        this.role = role;
+    }
 
 }
+
+

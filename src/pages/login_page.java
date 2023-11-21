@@ -50,13 +50,23 @@ public class login_page {
             }
 
             else {
-                frame.getContentPane().removeAll();
-                // Create and add the welcome page panel
-                dashboard apa_ya = new dashboard(user);
-                frame.add(apa_ya);
-                // Update the frame's UI
-                frame.revalidate();
-                frame.repaint();
+                if (user.getRole()==0){
+                    frame.getContentPane().removeAll();
+                    dashboard_admin apa_ya = new dashboard_admin(user);
+                    frame.add(apa_ya);
+                    frame.revalidate();
+                    frame.repaint();
+                }
+                else{
+                    frame.getContentPane().removeAll();
+                    // Create and add the welcome page panel
+                    dashboard apa_ya = new dashboard(user);
+                    frame.add(apa_ya);
+                    // Update the frame's UI
+                    frame.revalidate();
+                    frame.repaint();
+                }
+
             }
         });
 
