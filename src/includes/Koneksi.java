@@ -3,7 +3,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class Koneksi {
-    private final String DB_NAME = "java_app";
+    private final String DB_NAME = "java";
     private final String HOST = "root";
     private final String PASSWORD = "";
     private final String DRIVER = "com.mysql.jdbc.Driver";
@@ -44,6 +44,8 @@ public class Koneksi {
                 user.setName(rs.getString("name"));
                 user.setEmail(rs.getString("email"));
                 user.setPassword(rs.getString("password"));
+                user.setMoney(rs.getInt("money"));
+                user.setRole(rs.getInt("role"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
