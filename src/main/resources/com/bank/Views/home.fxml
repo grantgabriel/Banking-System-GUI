@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="478.0" prefWidth="711.0" style="-fx-background-image: url('building.jpg')" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bank.Controllers.homeController">
+   <children>
+      <Label layoutX="212.0" layoutY="79.0" prefHeight="119.0" prefWidth="263.0" text="R G T" textAlignment="CENTER" textFill="#ff54dd">
+         <font>
+            <Font size="81.0" />
+         </font>
+      </Label>
+      <Label layoutX="141.0" layoutY="210.0" prefHeight="59.0" prefWidth="430.0" text="Rafi Grant Thoriq Banking" textAlignment="CENTER" textFill="#ff54dd">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Separator layoutX="150.0" layoutY="194.0" prefHeight="8.0" prefWidth="387.0" style="-fx-background-color: #ff54dd;" />
+      <Label layoutX="184.0" layoutY="269.0" prefHeight="23.0" prefWidth="376.0" text="Satu satunya tempat yang dipercaya 😁." textFill="#ff54dd">
+         <font>
+            <Font name="Webdings" size="21.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

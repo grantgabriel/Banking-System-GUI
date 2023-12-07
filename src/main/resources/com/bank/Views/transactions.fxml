@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="431.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bank.Controllers.transactionController">
+   <children>
+      <VBox>
+         <children>
+            <Label prefHeight="50.0" prefWidth="391.0" text="Transaction Management" textFill="#ff54dd">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+               <children>
+                  <TabPane prefHeight="386.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
+                     <tabs>
+                        <Tab text="Transactions">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="413.0" prefWidth="700.0">
+                                 <children>
+                                    <TableView fx:id="tv_depot" layoutX="129.0" layoutY="14.0" prefHeight="102.0" prefWidth="471.0">
+                                      <columns>
+                                        <TableColumn fx:id="tc_dep_op" prefWidth="54.4000244140625" text="Number" />
+                                          <TableColumn fx:id="tc_dep_date" prefWidth="104.0" text="Date" />
+                                          <TableColumn fx:id="tc_dep_mnt" prefWidth="156.79998779296875" text="Amount" />
+                                          <TableColumn fx:id="tc_dep_em" prefWidth="155.99998779296874" text="N° compte" />
+                                      </columns>
+                                    </TableView>
+                                    <Button fx:id="btn_load" layoutX="610.0" layoutY="13.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="54.0" style="-fx-background-color: #ff54dd;" text="Load" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <TableView fx:id="tv_retrait" layoutX="128.0" layoutY="127.0" prefHeight="102.0" prefWidth="472.0">
+                                       <columns>
+                                          <TableColumn fx:id="tc_ret_op" prefWidth="52.0" text="Number" />
+                                          <TableColumn fx:id="tc_ret_date" prefWidth="105.60003662109375" text="Date" />
+                                          <TableColumn fx:id="tc_ret_mnt" prefWidth="157.5999755859375" text="Amount" />
+                                          <TableColumn fx:id="tc_ret_em" prefWidth="154.4000244140625" text="N° compte" />
+                                       </columns>
+                                    </TableView>
+                                    <TableView fx:id="tv_virement" layoutX="129.0" layoutY="238.0" prefHeight="102.0" prefWidth="470.0">
+                                       <columns>
+                                          <TableColumn fx:id="tc_vir_op" prefWidth="52.0" text="Number" />
+                                          <TableColumn fx:id="tc_vir_date" prefWidth="105.60003662109375" text="Date" />
+                                          <TableColumn fx:id="tc_vir_mnt" prefWidth="84.79998779296875" text="Amount" />
+                                          <TableColumn fx:id="tc_vir_em" prefWidth="94.39996337890625" text="Pengirim" />
+                                          <TableColumn fx:id="tc_vir_ben" prefWidth="131.4000244140625" text="Penerima" />
+                                       </columns>
+                                    </TableView>
+                                    <Label layoutX="52.0" layoutY="15.0" text="Deposit" textFill="#ff54dd">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="33.0" layoutY="127.0" text="Withdraw" textFill="#ff54dd">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="40.0" layoutY="238.0" text="Transfer" textFill="#ff54dd">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Deposit">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="283.0" prefWidth="358.0">
+                                 <children>
+                                    <Line endX="542.0" endY="-4.76837158203125E-6" layoutX="158.0" layoutY="15.0" startX="-203.60000610351562" startY="-4.76837158203125E-6" stroke="#ff54dd" />
+                                    <Line endX="659.5999755859375" endY="-3.814697265625E-6" layoutX="158.0" layoutY="46.0" startX="-182.0" startY="-3.814697265625E-6" stroke="#ff54dd" />
+                                    <Text fill="#ff54dd" layoutX="308.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deposit" wrappingWidth="87.20001220703125">
+                                       <font>
+                                          <Font name="System Bold" size="21.0" />
+                                       </font>
+                                    </Text>
+                                    <Button fx:id="btn_search1" layoutX="578.0" layoutY="59.0" mnemonicParsing="false" text="Search" />
+                                    <Button fx:id="btn_conf1" layoutX="578.0" layoutY="274.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #ff54dd;" styleClass="buttons" text="Confirmer" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font></Button>
+                                    <TextField fx:id="tf_mnt1" layoutX="369.0" layoutY="275.0" prefHeight="26.0" prefWidth="197.0" promptText="Amount à créditer" styleClass="textFields" />
+                                    <TextField fx:id="tf_num1" layoutX="205.0" layoutY="58.0" prefHeight="26.0" prefWidth="362.0" promptText="N° Compte à créditer" />
+                                    <HBox layoutX="130.0" layoutY="91.0" prefHeight="175.0" prefWidth="438.0" style="-fx-background-color: #ffffff;">
+                                       <children>
+                                          <VBox prefHeight="130.0" prefWidth="78.0">
+                                             <children>
+                                                <Label prefHeight="17.0" prefWidth="92.0" text="N°       :" textFill="#ff54dd">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="17.0" prefWidth="92.0" text="Type   :" textFill="#ff54dd">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="17.0" prefWidth="92.0" text="CIN     :" textFill="#ff54dd">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="17.0" prefWidth="92.0" text="Etat     :" textFill="#ff54dd">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="17.0" prefWidth="92.0" text="Saldo  :" textFill="#ff54dd">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <Region prefHeight="175.0" prefWidth="112.0" />
+                                          <VBox prefHeight="175.0" prefWidth="191.0">
+                                             <children>
+                                                <Label fx:id="lab_id1" prefHeight="34.0" prefWidth="226.0">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lab_ty1" prefHeight="34.0" prefWidth="202.0">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lab_cin1" prefHeight="34.0" prefWidth="245.0">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lab_et1" prefHeight="34.0" prefWidth="200.0">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lab_sol1" prefHeight="34.0" prefWidth="210.0">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <Label fx:id="lab_err1" layoutX="76.0" layoutY="279.0" textFill="#f40505" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Withdraw">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="283.0" prefWidth="358.0">
+                                 <children>
+                                    <Line endX="542.0" endY="-4.76837158203125E-6" layoutX="158.0" layoutY="15.0" startX="-203.60000610351562" startY="-4.76837158203125E-6" stroke="#ff54dd" />
+                                    <Line endX="659.5999755859375" endY="-3.814697265625E-6" layoutX="158.0" layoutY="46.0" startX="-182.0" startY="-3.814697265625E-6" stroke="#ff54dd" />
+                                    <Text fill="#ff54dd" layoutX="314.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Withdraw" wrappingWidth="118.4000244140625">
+                                       <font>
+                                          <Font name="System Bold" size="21.0" />
+                                       </font>
+                                    </Text>
+                                    <Button fx:id="btn_search2" layoutX="578.0" layoutY="59.0" mnemonicParsing="false" text="Search" />
+                                    <Button fx:id="btn_conf2" layoutX="578.0" layoutY="272.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #ff54dd;" styleClass="buttons" text="Confirmer" textFill="WHITE" />
+                                    <TextField fx:id="tf_mnt2" layoutX="371.0" layoutY="273.0" prefHeight="26.0" prefWidth="197.0" promptText="Amount à débiter" styleClass="textFields" />
+                                    <TextField fx:id="tf_num2" layoutX="205.0" layoutY="59.0" prefHeight="26.0" prefWidth="362.0" promptText="N° Compte à débiter" />
+                                    <HBox layoutX="131.0" layoutY="91.0" prefHeight="175.0" prefWidth="438.0" style="-fx-background-color: #ffffff;">
+                                       <children>
+                                          <VBox prefHeight="130.0" prefWidth="78.0">
+                                             <children>
+                                                <Label prefHeight="17.0" prefWidth="92.0" text="N°       :" textFill="#ff54dd">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="17.0" prefWidth="92.0" text="Type   :" textFill="#ff54dd">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="17.0" prefWidth="92.0" text="CIN     :" textFill="#ff54dd">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="17.0" prefWidth="92.0" text="Etat     :" textFill="#ff54dd">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="17.0" prefWidth="92.0" text="Saldo  :" textFill="#ff54dd">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <Region prefHeight="175.0" prefWidth="112.0" />
+                                          <VBox prefHeight="175.0" prefWidth="191.0">
+                                             <children>
+                                                <Label fx:id="lab_id2" prefHeight="34.0" prefWidth="199.0">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lab_ty2" prefHeight="34.0" prefWidth="200.0">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lab_cin2" prefHeight="34.0" prefWidth="203.0">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lab_et2" prefHeight="34.0" prefWidth="198.0">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lab_sol2" prefHeight="34.0" prefWidth="195.0">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <Label fx:id="lab_err2" layoutX="72.0" layoutY="277.0" textFill="#fa0505" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Transfer">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="283.0" prefWidth="358.0">
+                                 <children>
+                                    <Line endX="542.0" endY="-4.76837158203125E-6" layoutX="158.0" layoutY="15.0" startX="-203.60000610351562" startY="-4.76837158203125E-6" stroke="#ff54dd" />
+                                    <Line endX="659.5999755859375" endY="-3.814697265625E-6" layoutX="158.0" layoutY="46.0" startX="-182.0" startY="-3.814697265625E-6" stroke="#ff54dd" />
+                                    <Text fill="#ff54dd" layoutX="301.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transfer" wrappingWidth="98.800048828125">
+                                       <font>
+                                          <Font name="System Bold" size="21.0" />
+                                       </font>
+                                    </Text>
+                                    <Button fx:id="btn_search3" layoutX="624.0" layoutY="60.0" mnemonicParsing="false" text="Search" />
+                                    <Button fx:id="btn_conf3" layoutX="555.0" layoutY="289.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #ff54dd;" styleClass="buttons" text="Confirmer" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font></Button>
+                                    <TextField fx:id="tf_mnt3" layoutX="362.0" layoutY="289.0" prefHeight="26.0" prefWidth="186.0" promptText="Amount à virer" styleClass="textFields" />
+                                    <TextField fx:id="tf_num4" layoutX="359.0" layoutY="60.0" prefHeight="26.0" prefWidth="264.0" promptText="N° Compte à débiter" />
+                                    <HBox layoutX="39.0" layoutY="110.0" prefHeight="162.0" prefWidth="258.0" style="-fx-background-color: #ffffff;">
+                                       <children>
+                                          <VBox prefHeight="130.0" prefWidth="78.0">
+                                             <children>
+                                                <Label prefHeight="17.0" prefWidth="92.0" text="N°       :" textFill="#ff54dd">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="17.0" prefWidth="92.0" text="Type   :" textFill="#ff54dd">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="17.0" prefWidth="92.0" text="CIN     :" textFill="#ff54dd">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="17.0" prefWidth="92.0" text="Etat     :" textFill="#ff54dd">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="17.0" prefWidth="92.0" text="Saldo  :" textFill="#ff54dd">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <Region prefHeight="175.0" prefWidth="30.0" />
+                                          <VBox prefHeight="175.0" prefWidth="157.0">
+                                             <children>
+                                                <Label fx:id="lab_id3" prefHeight="34.0" prefWidth="186.0">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lab_ty3" prefHeight="34.0" prefWidth="179.0">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lab_cin3" prefHeight="34.0" prefWidth="217.0">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lab_et3" prefHeight="34.0" prefWidth="187.0">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lab_sol3" prefHeight="34.0" prefWidth="223.0">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <TextField fx:id="tf_num3" layoutX="39.0" layoutY="60.0" prefHeight="26.0" prefWidth="258.0" promptText="N° Compte à créditer" />
+                                    <HBox layoutX="361.0" layoutY="110.0" prefHeight="156.0" prefWidth="263.0" style="-fx-background-color: #ffffff;">
+                                       <children>
+                                          <VBox prefHeight="130.0" prefWidth="78.0">
+                                             <children>
+                                                <Label prefHeight="17.0" prefWidth="92.0" text="N°       :" textFill="#ff54dd">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="17.0" prefWidth="92.0" text="Type   :" textFill="#ff54dd">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="17.0" prefWidth="92.0" text="CIN     :" textFill="#ff54dd">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="17.0" prefWidth="92.0" text="Etat     :" textFill="#ff54dd">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="17.0" prefWidth="92.0" text="Saldo  :" textFill="#ff54dd">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <Region prefHeight="175.0" prefWidth="30.0" />
+                                          <VBox prefHeight="175.0" prefWidth="157.0">
+                                             <children>
+                                                <Label fx:id="lab_id4" prefHeight="34.0" prefWidth="172.0">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lab_ty4" prefHeight="34.0" prefWidth="218.0">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lab_cin4" prefHeight="34.0" prefWidth="175.0">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lab_et4" prefHeight="34.0" prefWidth="198.0">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lab_sol4" prefHeight="34.0" prefWidth="197.0">
+                                                   <font>
+                                                      <Font size="23.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <Label layoutX="39.0" layoutY="86.0" text="Pengirim" textFill="#ff54dd" />
+                                    <Label layoutX="361.0" layoutY="86.0" text="Penerima" textFill="#ff54dd" />
+                                    <Label fx:id="lab_err3" layoutX="49.0" layoutY="302.0" textFill="RED" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</Pane>
